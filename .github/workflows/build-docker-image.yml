@@ -102,10 +102,11 @@ jobs:
 
       - name: Build ghcr.io/${{ inputs.repository }}:${{ inputs.image-tag }}
         id: build-production
-        uses: docker/build-push-action@v3.2.0
+        uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./app/Dockerfile
+          context: ./
+          file: ./Dockerfile
           tags: ghcr.io/ronit-wilson-r/kuksa-can-provider-data:arm64
           push: true
           platforms: "linux/arm64"
+          provenance: false
