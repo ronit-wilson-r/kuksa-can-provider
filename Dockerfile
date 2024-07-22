@@ -55,7 +55,7 @@ COPY ./*.dbc ./candump*.log ./*.json ./
 # Debian slim versions
 # For development add :debug like this
 # FROM gcr.io/distroless/base-debian12:debug  to get a busybox shell as well
-FROM gcr.io/distroless/base-debian12
+FROM gcr.io/distroless/base-debian12:debug 
 
 WORKDIR /dist
 
@@ -79,4 +79,4 @@ ENV VEHICLEDATABROKER_DAPR_APP_ID=vehicledatabroker
 
 ENV PYTHONUNBUFFERED=yes
 
-ENTRYPOINT ["./dbcfeeder"]
+ENTRYPOINT ["sh"]
