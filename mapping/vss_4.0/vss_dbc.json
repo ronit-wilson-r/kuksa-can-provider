@@ -5038,6 +5038,10 @@
                           },
                           "Speed": {
                             "datatype": "float",
+                            "dbc2vss": {
+                              "interval_ms": 100,
+                              "signal": "WheelSpeedFL175"
+                            },
                             "description": "Rotational speed of a vehicle's wheel.",
                             "type": "sensor",
                             "unit": "km/h"
@@ -5119,6 +5123,10 @@
                           },
                           "Speed": {
                             "datatype": "float",
+                            "dbc2vss": {
+                              "interval_ms": 100,
+                              "signal": "WheelSpeedFR175"
+                            },
                             "description": "Rotational speed of a vehicle's wheel.",
                             "type": "sensor",
                             "unit": "km/h"
@@ -5275,6 +5283,10 @@
                           },
                           "Speed": {
                             "datatype": "float",
+                            "dbc2vss": {
+                              "interval_ms": 100,
+                              "signal": "WheelSpeedRL175"
+                            },
                             "description": "Rotational speed of a vehicle's wheel.",
                             "type": "sensor",
                             "unit": "km/h"
@@ -5356,6 +5368,10 @@
                           },
                           "Speed": {
                             "datatype": "float",
+                            "dbc2vss": {
+                              "interval_ms": 100,
+                              "signal": "WheelSpeedRR175"
+                            },
                             "description": "Rotational speed of a vehicle's wheel.",
                             "type": "sensor",
                             "unit": "km/h"
