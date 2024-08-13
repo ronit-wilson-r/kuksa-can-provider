@@ -36,6 +36,21 @@ BS_:
 BU_: Receiver ChassisBus VehicleBus PartyBus
 
 
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ ESP_wheelSpeedsCounter : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ ESP_wheelSpeedsChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_speedChecksum : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ DI_speedCounter : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DI_uiSpeedHighSpeed : 0|9@1+ (1,0) [0|510] "" Vector__XXX
+ SG_ DI_uiSpeedUnits : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DI_vehicleSpeed : 0|12@1+ (0.08,-40) [-40|285] "kph" Vector__XXX
+ SG_ Brake : 0|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ VCRIGHT_brakeLightStatus : 0|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ VCRIGHT_reverseLightStatus : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 0 New_Message_160: 8 Vector__XXX
+ SG_ New_Signal_2753 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+
 BO_ 12 ID00CUI_status: 8 VehicleBus
  SG_ UI_audioActive : 1|1@1+ (1,0) [0|1] ""  Receiver
  SG_ UI_autopilotTrial : 12|2@1+ (1,0) [0|3] ""  Receiver
@@ -565,8 +580,8 @@ BO_ 569 ID239DAS_lanes: 8 ChassisBus
  SG_ DAS_rightLineUsage : 50|2@1+ (1,0) [0|3] ""  Receiver
  SG_ DAS_virtualLaneC0 : 16|8@1+ (0.035,-3.5) [-3.5|3.5] "m"  Receiver
  SG_ DAS_virtualLaneC1 : 24|8@1+ (0.0016,-0.2) [-0.2|0.2] "rad"  Receiver
- SG_ DAS_virtualLaneC2 : 32|8@1+ (2E-005,-0.0025) [-0.0025|0.0025] "m-1"  Receiver
- SG_ DAS_virtualLaneC3 : 40|8@1+ (2.4E-007,-3E-005) [-3E-005|3E-005] "m-2"  Receiver
+ SG_ DAS_virtualLaneC2 : 32|8@1+ (2E-05,-0.0025) [-0.0025|0.0025] "m-1"  Receiver
+ SG_ DAS_virtualLaneC3 : 40|8@1+ (2.4E-07,-3E-05) [-3E-05|3E-05] "m-2"  Receiver
  SG_ DAS_virtualLaneViewRange : 8|8@1+ (1,0) [0|160] "m"  Receiver
  SG_ DAS_virtualLaneWidth : 4|4@1+ (0.3125,2) [2|6.6875] "m"  Receiver
 
@@ -1038,10 +1053,10 @@ BO_ 787 ID313UI_trackModeSettings: 8 VehicleBus
 BO_ 821 ID335RearDIinfo: 8 VehicleBus
  SG_ DIR_infoIndex M : 0|8@1+ (1,0) [0|255] ""  Receiver
  SG_ DIR_FPGA_version m16 : 48|8@1+ (1,0) [0|255] ""  Receiver
- SG_ DIR_appGitHash m17 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ DIR_appGitHash m17 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ DIR_applicationCrc m13 : 32|32@1+ (1,0) [0|4294970000] ""  Receiver
  SG_ DIR_assemblyId m11 : 24|8@1+ (1,0) [0|255] ""  Receiver
- SG_ DIR_bootGitHash m18 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ DIR_bootGitHash m18 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ DIR_bootloaderCrc m20 : 32|32@1+ (1,0) [0|4294970000] ""  Receiver
  SG_ DIR_buildConfigurationId m10 : 16|16@1+ (1,0) [0|65535] ""  Receiver
  SG_ DIR_buildType m10 : 8|3@1+ (1,0) [0|4] ""  Receiver
@@ -1053,7 +1068,7 @@ BO_ 821 ID335RearDIinfo: 8 VehicleBus
  SG_ DIR_pcbaId m11 : 16|8@1+ (1,0) [0|255] ""  Receiver
  SG_ DIR_platformTyp m19 : 8|8@1+ (1,0) [0|255] ""  Receiver
  SG_ DIR_subUsageId m11 : 48|16@1+ (1,0) [0|65535] ""  Receiver
- SG_ DIR_subcomponentGitHash m31 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ DIR_subcomponentGitHash m31 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ DIR_usageId m11 : 32|16@1+ (1,0) [0|65535] ""  Receiver
 
 BO_ 899 ID383VCRIGHT_thsStatus: 8 VehicleBus
@@ -1133,20 +1148,18 @@ BO_ 963 ID3C3VCRIGHT_switchStatus: 7 VehicleBus
  SG_ VCRIGHT_trunkExtReleasePressed : 48|1@1+ (1,0) [0|1] ""  Receiver
 
 BO_ 995 ID3E3VCRIGHT_lightStatus: 2 VehicleBus
- SG_ VCRIGHT_brakeLightStatus : 0|2@1+ (1,0) [0|3] ""  Receiver
  SG_ VCRIGHT_interiorTrunkLightStatus : 10|2@1+ (1,0) [0|3] ""  Receiver
  SG_ VCRIGHT_rearFogLightStatus : 8|2@1+ (1,0) [0|3] ""  Receiver
- SG_ VCRIGHT_reverseLightStatus : 6|2@1+ (1,0) [0|3] ""  Receiver
  SG_ VCRIGHT_tailLightStatus : 2|2@1+ (1,0) [0|3] ""  Receiver
  SG_ VCRIGHT_turnSignalStatus : 4|2@1+ (1,0) [0|3] ""  Receiver
 
 BO_ 1622 ID656FrontDIinfo: 8 VehicleBus
  SG_ DIF_infoIndex M : 0|8@1+ (1,0) [0|255] ""  Receiver
  SG_ DIF_FPGA_version m16 : 48|8@1+ (1,0) [0|255] ""  Receiver
- SG_ DIF_appGitHash m17 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ DIF_appGitHash m17 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ DIF_applicationCrc m13 : 32|32@1+ (1,0) [0|4294970000] ""  Receiver
  SG_ DIF_assemblyId m11 : 24|8@1+ (1,0) [0|255] ""  Receiver
- SG_ DIF_bootGitHash m18 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ DIF_bootGitHash m18 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ DIF_bootloaderCrc m20 : 32|32@1+ (1,0) [0|4294970000] ""  Receiver
  SG_ DIF_buildConfigurationId m10 : 16|16@1+ (1,0) [0|65535] ""  Receiver
  SG_ DIF_buildType m10 : 8|3@1+ (1,0) [0|4] ""  Receiver
@@ -1158,16 +1171,16 @@ BO_ 1622 ID656FrontDIinfo: 8 VehicleBus
  SG_ DIF_pcbaId m11 : 16|8@1+ (1,0) [0|255] ""  Receiver
  SG_ DIF_platformTyp m19 : 8|8@1+ (1,0) [0|255] ""  Receiver
  SG_ DIF_subUsageId m11 : 48|16@1+ (1,0) [0|65535] ""  Receiver
- SG_ DIF_subcomponentGitHash m31 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ DIF_subcomponentGitHash m31 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ DIF_usageId m11 : 32|16@1+ (1,0) [0|65535] ""  Receiver
 
 BO_ 768 ID300BMS_info: 8 VehicleBus
  SG_ BMS_infoIndex M : 0|8@1+ (1,0) [0|255] ""  Receiver
  SG_ BMS_appCrc m13 : 32|32@1+ (1,0) [0|4294970000] ""  Receiver
- SG_ BMS_appGitHash m17 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ BMS_appGitHash m17 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ BMS_assemblyId m11 : 24|8@1+ (1,0) [0|255] ""  Receiver
  SG_ BMS_bootCrc m20 : 32|32@1+ (1,0) [0|4294970000] ""  Receiver
- SG_ BMS_bootGitHash m18 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ BMS_bootGitHash m18 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ BMS_bootUdsProtoVersion m20 : 8|8@1+ (1,0) [0|255] ""  Receiver
  SG_ BMS_buildConfigId m10 : 16|16@1+ (1,0) [0|65535] ""  Receiver
  SG_ BMS_buildType m10 : 8|3@1+ (1,0) [0|4] ""  Receiver
@@ -1454,7 +1467,7 @@ BO_ 2005 ID7D5DIR_debug: 8 VehicleBus
  SG_ DIR_motorIBavg m38 : 48|16@1- (0.1,0) [-3276.8|3276.7] "A"  Receiver
  SG_ DIR_motorIC m32 : 48|16@1+ (0.1,0) [0|6553.5] "A"  Receiver
  SG_ DIR_motorType m128 : 8|6@1+ (1,0) [0|32] ""  Receiver
- SG_ DIR_motorV m34 : 48|16@1+ (2E-005,0) [0|1.3107] "mindex"  Receiver
+ SG_ DIR_motorV m34 : 48|16@1+ (2E-05,0) [0|1.3107] "mindex"  Receiver
  SG_ DIR_negDcBusbarTemp m70 : 48|8@1+ (1,-40) [-40|215] "C"  Receiver
  SG_ DIR_offsetA m32 : 8|8@1- (0.1,0) [-12.8|12.7] "A"  Receiver
  SG_ DIR_offsetB m33 : 8|8@1- (0.1,0) [-12.8|12.7] "A"  Receiver
@@ -1510,10 +1523,10 @@ BO_ 2005 ID7D5DIR_debug: 8 VehicleBus
  SG_ DIR_statorIQref m34 : 16|16@1- (0.1,0) [-3276.8|3276.7] "A"  Receiver
  SG_ DIR_statorTemp1 m64 : 32|8@1+ (1,-40) [-40|215] "C"  Receiver
  SG_ DIR_statorTemp2 m64 : 40|8@1+ (1,-40) [-40|215] "C"  Receiver
- SG_ DIR_statorVD m36 : 32|16@1- (4E-005,0) [-1.31072|1.31068] "mindex"  Receiver
- SG_ DIR_statorVDFiltered m63 : 16|16@1- (4E-005,0) [-1.31072|1.31068] "mindex"  Receiver
- SG_ DIR_statorVQ m36 : 16|16@1- (4E-005,0) [-1.31072|1.31068] "mindex"  Receiver
- SG_ DIR_statorVQFiltered m63 : 32|16@1- (4E-005,0) [-1.31072|1.31068] "mindex"  Receiver
+ SG_ DIR_statorVD m36 : 32|16@1- (4E-05,0) [-1.31072|1.31068] "mindex"  Receiver
+ SG_ DIR_statorVDFiltered m63 : 16|16@1- (4E-05,0) [-1.31072|1.31068] "mindex"  Receiver
+ SG_ DIR_statorVQ m36 : 16|16@1- (4E-05,0) [-1.31072|1.31068] "mindex"  Receiver
+ SG_ DIR_statorVQFiltered m63 : 32|16@1- (4E-05,0) [-1.31072|1.31068] "mindex"  Receiver
  SG_ DIR_sysHeatPowerOptimal m50 : 16|8@1+ (0.08,0) [0|20] "kW"  Receiver
  SG_ DIR_systemStack m68 : 8|8@1+ (0.4,0) [0|100] "%"  Receiver
  SG_ DIR_systemTorqueCommand m35 : 48|16@1- (0.035,0) [-1146.88|1146.85] "Nm"  Receiver
@@ -1530,7 +1543,7 @@ BO_ 2005 ID7D5DIR_debug: 8 VehicleBus
  SG_ DIR_tqScaleShift m40 : 56|8@1+ (0.4,0) [0|102] "%"  Receiver
  SG_ DIR_udsStack m68 : 40|8@1+ (0.4,0) [0|100] "%"  Receiver
  SG_ DIR_usmState m38 : 12|3@1+ (1,0) [0|7] ""  Receiver
- SG_ DIR_veMassInvRaw m41 : 8|12@1+ (1E-007,0.0001) [0.0001|0.0005] "1/kg"  Receiver
+ SG_ DIR_veMassInvRaw m41 : 8|12@1+ (1E-07,0.0001) [0.0001|0.0005] "1/kg"  Receiver
  SG_ DIR_veResForce m41 : 20|12@1- (0.0005,0) [-1.024|1.0235] "G"  Receiver
  SG_ DIR_wasteCurrentLimit m41 : 48|16@1+ (0.1,0) [0|6553.5] "A"  Receiver
  SG_ DIR_xcpStack m68 : 48|8@1+ (0.4,0) [0|100] "%"  Receiver
@@ -1587,7 +1600,7 @@ BO_ 1879 ID757DIF_debug: 8 VehicleBus
  SG_ DIF_motorIBavg m38 : 48|16@1- (0.1,0) [-3276.8|3276.7] "A"  Receiver
  SG_ DIF_motorIC m32 : 48|16@1+ (0.1,0) [0|6553.5] "A"  Receiver
  SG_ DIF_motorType m128 : 8|6@1+ (1,0) [0|32] ""  Receiver
- SG_ DIF_motorV m34 : 48|16@1+ (2E-005,0) [0|1.3107] "mindex"  Receiver
+ SG_ DIF_motorV m34 : 48|16@1+ (2E-05,0) [0|1.3107] "mindex"  Receiver
  SG_ DIF_negDcBusbarTemp m70 : 48|8@1+ (1,-40) [-40|215] "C"  Receiver
  SG_ DIF_offsetA m32 : 8|8@1- (0.1,0) [-12.8|12.7] "A"  Receiver
  SG_ DIF_offsetB m33 : 8|8@1- (0.1,0) [-12.8|12.7] "A"  Receiver
@@ -1643,10 +1656,10 @@ BO_ 1879 ID757DIF_debug: 8 VehicleBus
  SG_ DIF_statorIQref m34 : 16|16@1- (0.1,0) [-3276.8|3276.7] "A"  Receiver
  SG_ DIF_statorTemp1 m64 : 32|8@1+ (1,-40) [-40|215] "C"  Receiver
  SG_ DIF_statorTemp2 m64 : 40|8@1+ (1,-40) [-40|215] "C"  Receiver
- SG_ DIF_statorVD m36 : 32|16@1- (4E-005,0) [-1.31072|1.31068] "mindex"  Receiver
- SG_ DIF_statorVDFiltered m63 : 16|16@1- (4E-005,0) [-1.31072|1.31068] "mindex"  Receiver
- SG_ DIF_statorVQ m36 : 16|16@1- (4E-005,0) [-1.31072|1.31068] "mindex"  Receiver
- SG_ DIF_statorVQFiltered m63 : 32|16@1- (4E-005,0) [-1.31072|1.31068] "mindex"  Receiver
+ SG_ DIF_statorVD m36 : 32|16@1- (4E-05,0) [-1.31072|1.31068] "mindex"  Receiver
+ SG_ DIF_statorVDFiltered m63 : 16|16@1- (4E-05,0) [-1.31072|1.31068] "mindex"  Receiver
+ SG_ DIF_statorVQ m36 : 16|16@1- (4E-05,0) [-1.31072|1.31068] "mindex"  Receiver
+ SG_ DIF_statorVQFiltered m63 : 32|16@1- (4E-05,0) [-1.31072|1.31068] "mindex"  Receiver
  SG_ DIF_sysHeatPowerOptimal m50 : 16|8@1+ (0.08,0) [0|20] "kW"  Receiver
  SG_ DIF_systemStack m68 : 8|8@1+ (0.4,0) [0|100] "%"  Receiver
  SG_ DIF_systemTorqueCommand m35 : 48|16@1- (0.035,0) [-1146.88|1146.85] "Nm"  Receiver
@@ -1663,7 +1676,7 @@ BO_ 1879 ID757DIF_debug: 8 VehicleBus
  SG_ DIF_tqScaleShift m40 : 56|8@1+ (0.4,0) [0|102] "%"  Receiver
  SG_ DIF_udsStack m68 : 40|8@1+ (0.4,0) [0|100] "%"  Receiver
  SG_ DIF_usmState m38 : 12|3@1+ (1,0) [0|7] ""  Receiver
- SG_ DIF_veMassInvRaw m41 : 8|12@1+ (1E-007,0.0001) [0.0001|0.0005] "1/kg"  Receiver
+ SG_ DIF_veMassInvRaw m41 : 8|12@1+ (1E-07,0.0001) [0.0001|0.0005] "1/kg"  Receiver
  SG_ DIF_veResForce m41 : 20|12@1- (0.0005,0) [-1.024|1.0235] "G"  Receiver
  SG_ DIF_wasteCurrentLimit m41 : 48|16@1+ (0.1,0) [0|6553.5] "A"  Receiver
  SG_ DIF_xcpStack m68 : 48|8@1+ (0.4,0) [0|100] "%"  Receiver
@@ -2213,13 +2226,11 @@ BO_ 341 ID155WheelAngles: 8 ChassisBus
  SG_ ESP_wheelRotationCounter : 52|4@1+ (1,0) [0|15] ""  Receiver
  SG_ ESP_wheelRotationChecksum : 56|8@1+ (1,0) [0|255] ""  Receiver
 
-BO_ 373 ID175WheelSpeed: 8 ChassisBus
- SG_ WheelSpeedRR175 : 39|13@1+ (0.04,0) [0|327.64] "KPH"  Receiver
- SG_ WheelSpeedRL175 : 26|13@1+ (0.04,0) [0|327.64] "KPH"  Receiver
- SG_ WheelSpeedFR175 : 13|13@1+ (0.04,0) [0|327.64] "KPH"  Receiver
- SG_ WheelSpeedFL175 : 0|13@1+ (0.04,0) [0|327.64] "KPH"  Receiver
- SG_ ESP_wheelSpeedsCounter : 52|4@1+ (1,0) [0|15] ""  Receiver
- SG_ ESP_wheelSpeedsChecksum : 56|8@1+ (1,0) [0|255] ""  Receiver
+BO_ 1980 ID175WheelSpeed: 8 ChassisBus
+ SG_ WheelSpeedRR175 : 39|16@0+ (0.01,0) [0|655.35] "KPH"  Receiver
+ SG_ WheelSpeedRL175 : 55|16@0+ (0.01,0) [0|655.35] "KPH"  Receiver
+ SG_ WheelSpeedFR175 : 7|16@0+ (0.01,0) [0|655.35] "KPH"  Receiver
+ SG_ WheelSpeedFL175 : 23|16@0+ (0.01,0) [0|655.35] "KPH"  Receiver
 
 BO_ 389 ID185ESP_brakeTorque: 8 ChassisBus
  SG_ ESP_brakeTorqueFrL : 0|12@1+ (2,0) [0|8190] "Nm"  Receiver
@@ -2348,8 +2359,8 @@ BO_ 616 ID268SystemPower: 5 VehicleBus
 
 BO_ 79 ID04FGPSLatLong: 8 ChassisBus
  SG_ GPSAccuracy04F : 57|7@1+ (0.2,0) [0|25.2] "m"  Receiver
- SG_ GPSLongitude04F : 28|28@1- (1E-006,0) [-134.218|134.218] "Deg"  Receiver
- SG_ GPSLatitude04F : 0|28@1- (1E-006,0) [-134.218|134.218] "Deg"  Receiver
+ SG_ GPSLongitude04F : 28|28@1- (1E-06,0) [-134.218|134.218] "Deg"  Receiver
+ SG_ GPSLatitude04F : 0|28@1- (1E-06,0) [-134.218|134.218] "Deg"  Receiver
 
 BO_ 978 ID3D2TotalChargeDischarge: 8 VehicleBus
  SG_ TotalDischargeKWh3D2 : 0|32@1+ (0.001,0) [0|4294970] "kWh"  Receiver
@@ -2434,10 +2445,10 @@ BO_ 769 ID301VCFRONT_info: 8 VehicleBus
  SG_ VCFRONT_hcmlAppCRC m16 : 32|32@1+ (1,0) [0|4294970000] ""  Receiver
  SG_ VCFRONT_hcmrAppCRC m23 : 32|32@1+ (1,0) [0|4294970000] ""  Receiver
  SG_ VCFRONT_infoAppCrc m13 : 8|32@1+ (1,0) [0|4294970000] ""  Receiver
- SG_ VCFRONT_infoAppGitHash m17 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ VCFRONT_infoAppGitHash m17 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ VCFRONT_infoAssemblyId m11 : 16|8@1+ (1,0) [0|255] ""  Receiver
  SG_ VCFRONT_infoBootCrc m20 : 24|32@1+ (1,0) [0|4294970000] ""  Receiver
- SG_ VCFRONT_infoBootGitHash m18 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ VCFRONT_infoBootGitHash m18 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ VCFRONT_infoBootUdsProtoVersion m20 : 8|16@1+ (1,0) [0|65535] ""  Receiver
  SG_ VCFRONT_infoBuildConfigId m10 : 16|16@1+ (1,0) [0|65535] ""  Receiver
  SG_ VCFRONT_infoBuildType m10 : 8|3@1+ (1,0) [0|4] ""  Receiver
@@ -2518,7 +2529,7 @@ BO_ 609 ID261_12vBattStatus: 8 VehicleBus
  SG_ VCFRONT_chargeNeeded m1 : 45|1@1+ (1,0) [0|0] ""  Receiver
  SG_ VCFRONT_firstChargeOTA m0 : 44|1@1+ (1,0) [0|0] ""  Receiver
  SG_ VCFRONT_PCSMia m1 : 44|1@1+ (1,0) [0|0] ""  Receiver
- SG_ VCFRONT_silentWakeIBSCurrent m0 : 32|12@1- (0.1,-204.7) [-409.5|2.8421709430404E-014] "mA"  Receiver
+ SG_ VCFRONT_silentWakeIBSCurrent m0 : 32|12@1- (0.1,-204.7) [-409.5|2.8421709430404E-14] "mA"  Receiver
  SG_ v12vBattVoltage261 m1 : 32|12@1+ (0.00544368,0) [0|22.2918696] "V"  Receiver
  SG_ VCFRONT_12VBatteryTargetVoltage m2 : 32|10@1+ (0.01,9) [9|19.23] "V"  Receiver
  SG_ v12vBattCurrent261 m0 : 16|16@1- (0.005,0) [-163.84|163.835] "A"  Receiver
@@ -2652,13 +2663,10 @@ BO_ 658 ID292BMS_SOC: 8 VehicleBus
  SG_ SOCmin292 : 0|10@1+ (0.1,0) [0|102.3] "%"  Receiver
  SG_ BMS_battTempPct : 50|8@1+ (0.4,0) [0|100] "%"  Receiver
 
-BO_ 599 ID257DIspeed: 8 VehicleBus
- SG_ DI_speedChecksum : 0|8@1+ (1,0) [0|255] ""  Receiver
- SG_ DI_speedCounter : 8|4@1+ (1,0) [0|15] ""  Receiver
- SG_ DI_uiSpeed : 24|9@1+ (1,0) [0|510] ""  Receiver
- SG_ DI_uiSpeedHighSpeed : 34|9@1+ (1,0) [0|510] ""  Receiver
- SG_ DI_uiSpeedUnits : 33|1@1+ (1,0) [0|1] ""  Receiver
- SG_ DI_vehicleSpeed : 12|12@1+ (0.08,-40) [-40|285] "kph"  Receiver
+BO_ 1963 ID257DIspeed: 5 VehicleBus
+ SG_ VCRIGHT_brakeLightStatus : 1|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ EngineSpeed : 15|16@0+ (0.25,0) [0|16383.75] "rpm" Vector__XXX
+ SG_ DI_uiSpeed : 31|16@0+ (0.01,0) [0|655.35] ""  Receiver
 
 BO_ 680 ID2A8CMPD_state: 8 VehicleBus
  SG_ CMPD_inputHVCurrent : 32|9@1+ (0.1,0) [0|50] "A"  Receiver
@@ -2673,18 +2681,18 @@ BO_ 680 ID2A8CMPD_state: 8 VehicleBus
  SG_ CMPD_wasteHeatState : 60|2@1+ (1,0) [0|3] ""  Receiver
 
 BO_ 1029 ID405VIN: 8 VehicleBus
- SG_ VINB405 m17 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
- SG_ VINC405 m18 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
- SG_ VINA405 m16 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ VINB405 m17 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
+ SG_ VINC405 m18 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
+ SG_ VINA405 m16 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ mux405 M : 0|8@1+ (1,0) [0|255] ""  Receiver
 
 BO_ 1310 ID51EFC_info: 8 VehicleBus
  SG_ FC_infoIndex M : 0|8@1+ (1,0) [0|255] ""  Receiver
- SG_ FC_infoAppGitHashBytes m17 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ FC_infoAppGitHashBytes m17 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ FC_infoApplicationCRC m13 : 32|32@1+ (1,0) [0|4294970000] ""  Receiver
  SG_ FC_infoAssemblyID m11 : 24|8@1+ (1,0) [0|255] ""  Receiver
  SG_ FC_infoBootCRC m15 : 32|32@1+ (1,0) [0|4294970000] ""  Receiver
- SG_ FC_infoBootGitHashBytes m18 : 8|56@1+ (1,0) [0|7.20576E+016] ""  Receiver
+ SG_ FC_infoBootGitHashBytes m18 : 8|56@1+ (1,0) [0|7.20576E+16] ""  Receiver
  SG_ FC_infoBootSvnRev m14 : 8|24@1+ (1,0) [0|16777200] ""  Receiver
  SG_ FC_infoBootUdsProtoVersion m20 : 8|8@1+ (1,0) [0|255] ""  Receiver
  SG_ FC_infoBranchOrigin m19 : 24|8@1+ (1,0) [0|255] ""  Receiver
@@ -3108,6 +3116,9 @@ BO_ 1025 ID401BrickVoltages: 8 VehicleBus
 
 
 
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 3221225472 DI_uiSpeedUnits "Speed Units, 0-mph 1-kph";
+CM_ SG_ 3221225472 DI_vehicleSpeed "Vehicle Speed, .05 -25 for mph";
 CM_ SG_ 130 UI_tripPlanningActive "Navigation Active";
 CM_ SG_ 257 RCM_pitchRate "Pitch";
 CM_ SG_ 257 RCM_rollRate "Roll";
@@ -3157,9 +3168,6 @@ CM_ SG_ 472 RearTorque1D8 "Rear Motor Torque";
 CM_ SG_ 468 RAWTorqueFront1D4 "Front Torque Old, Axle torque 2 with 9/1 gearing";
 CM_ SG_ 469 FrontTorqueRequest1D5 "Front Motor Torque Request";
 CM_ SG_ 469 FrontTorque1D5 "Front Motor Torque";
-CM_ SG_ 741 FrontPower2E5 "Front Motor Power";
-CM_ SG_ 741 FrontPowerLimit2E5 "Front Power Limit, approx offset Orig scale 1";
-CM_ SG_ 741 FrontHeatPower2E5 "Front Waste Heat Power";
 CM_ SG_ 822 DriveRegenRating336 "Regen Rating";
 CM_ SG_ 822 DrivePowerRating336 "Power Rating";
 CM_ SG_ 616 SystemRegenPowerMax268 "Max Regen Power";
@@ -3218,9 +3226,7 @@ CM_ SG_ 658 BattBeginningOfLifeEnergy292 "HV Battery Original Energy";
 CM_ SG_ 658 SOCmax292 "BMS Max SOC";
 CM_ SG_ 658 SOCave292 "BMS Ave SOC";
 CM_ SG_ 658 SOCmin292 "BMS Min SOC";
-CM_ SG_ 599 DI_uiSpeed "UI Speed";
-CM_ SG_ 599 DI_uiSpeedUnits "Speed Units, 0-mph 1-kph";
-CM_ SG_ 599 DI_vehicleSpeed "Vehicle Speed, .05 -25 for mph";
+CM_ SG_ 1963 DI_uiSpeed "UI Speed";
 CM_ SG_ 1029 VINB405 "VIN3, last 7 of VIN (ASCII)";
 CM_ SG_ 1029 VINC405 "VIN2, part two of VIN (ASCII)";
 CM_ SG_ 1029 VINA405 "VIN1, four zeros then first 3 characters of VIN";
@@ -3231,9 +3237,9 @@ CM_ SG_ 950 Odometer3B6 "Odometer";
 CM_ SG_ 614 RearPowerLimit266 "Rear Power Limit, approx offset Orig scale 1";
 CM_ SG_ 614 RearHeatPower266 "Rear Waste Heat Power";
 CM_ SG_ 614 RearPower266 "Rear Motor Power";
-CM_ SG_ 741 FrontPower2E5 "Front Motor Power";
-CM_ SG_ 741 FrontPowerLimit2E5 "Front Power Limit, approx offset Orig scale 1";
-CM_ SG_ 741 FrontHeatPower2E5 "Front Waste Heat Power";
+CM_ SG_ 741 FrontPower2E5 "Front Motor PowerFront Motor Power";
+CM_ SG_ 741 FrontPowerLimit2E5 "Front Power Limit, approx offset Orig scale 1Front Power Limit, approx offset Orig scale 1";
+CM_ SG_ 741 FrontHeatPower2E5 "Front Waste Heat PowerFront Waste Heat Power";
 CM_ SG_ 264 DIR_axleSpeed "Rear Axle Speed";
 CM_ SG_ 264 DIR_torqueActual "Rear Axle Torque";
 CM_ SG_ 264 DIR_torqueCommand "Rear Axle Torque Request";
@@ -3311,18 +3317,19 @@ BA_DEF_DEF_  "matchingcriteria" 0;
 BA_DEF_DEF_  "filterlabeling" 0;
 BA_DEF_DEF_  "SystemMessageLongSymbol" "";
 BA_ "BusType" "CAN";
-BA_ "GenMsgCycleTime" BO_ 530 100;
 BA_ "GenMsgSendType" BO_ 530 0;
+BA_ "GenMsgCycleTime" BO_ 530 100;
 BA_ "GenMsgCycleTime" BO_ 819 500;
 BA_ "GenMsgCycleTime" BO_ 577 100;
-BA_ "GenMsgCycleTime" BO_ 468 10;
+BA_ "GenMsgCycleTime" BO_ 1980 100;
 BA_ "GenMsgSendType" BO_ 468 0;
+BA_ "GenMsgCycleTime" BO_ 468 10;
 BA_ "GenMsgCycleTime" BO_ 962 50;
 BA_ "GenMsgCycleTime" BO_ 822 1000;
 BA_ "GenMsgCycleTime" BO_ 659 500;
 BA_ "GenMsgCycleTime" BO_ 616 100;
-BA_ "GenMsgSendType" BO_ 79 0;
 BA_ "GenMsgCycleTime" BO_ 79 1000;
+BA_ "GenMsgSendType" BO_ 79 0;
 BA_ "GenMsgCycleTime" BO_ 978 1000;
 BA_ "GenMsgCycleTime" BO_ 722 100;
 BA_ "GenMsgCycleTime" BO_ 1345 100;
@@ -3334,34 +3341,39 @@ BA_ "GenMsgCycleTime" BO_ 801 1000;
 BA_ "SystemMessageLongSymbol" BO_ 513 "ID201VCFRONT_loggingAndVitals10Hz";
 BA_ "GenMsgCycleTime" BO_ 984 1000;
 BA_ "GenMsgCycleTime" BO_ 609 100;
-BA_ "GenMsgSendType" BO_ 297 0;
 BA_ "GenMsgCycleTime" BO_ 297 10;
+BA_ "GenMsgSendType" BO_ 297 0;
 BA_ "GenMsgCycleTime" BO_ 612 100;
 BA_ "GenMsgCycleTime" BO_ 548 100;
-BA_ "GenMsgSendType" BO_ 280 0;
 BA_ "GenMsgCycleTime" BO_ 280 10;
+BA_ "GenMsgSendType" BO_ 280 0;
 BA_ "GenMsgCycleTime" BO_ 850 1000;
 BA_ "GenMsgCycleTime" BO_ 594 100;
 BA_ "GenMsgCycleTime" BO_ 786 1000;
 BA_ "GenMsgCycleTime" BO_ 658 100;
-BA_ "GenMsgCycleTime" BO_ 599 20;
+BA_ "GenMsgCycleTime" BO_ 1963 100;
 BA_ "GenMsgCycleTime" BO_ 1029 205;
 BA_ "GenMsgCycleTime" BO_ 886 1000;
-BA_ "GenMsgCycleTime" BO_ 340 10;
 BA_ "GenMsgSendType" BO_ 340 0;
+BA_ "GenMsgCycleTime" BO_ 340 10;
 BA_ "GenMsgCycleTime" BO_ 950 1000;
 BA_ "GenMsgCycleTime" BO_ 614 10;
 BA_ "GenMsgCycleTime" BO_ 741 1000;
-BA_ "GenMsgSendType" BO_ 264 0;
 BA_ "GenMsgCycleTime" BO_ 264 10;
-BA_ "GenMsgCycleTime" BO_ 306 10;
+BA_ "GenMsgSendType" BO_ 264 0;
 BA_ "GenMsgSendType" BO_ 306 0;
-BA_ "GenMsgSendType" BO_ 294 0;
+BA_ "GenMsgCycleTime" BO_ 306 10;
 BA_ "GenMsgCycleTime" BO_ 294 100;
+BA_ "GenMsgSendType" BO_ 294 0;
 BA_ "GenMsgCycleTime" BO_ 799 1000;
 BA_ "GenMsgCycleTime" BO_ 1022 1000;
 BA_ "GenMsgCycleTime" BO_ 2047 100;
 BA_ "GenSigEnvVarType" SG_ 472 TorqueFlags1D8 0;
+VAL_ 3221225472 DI_uiSpeedHighSpeed 511 "DI_UI_HIGH_SPEED_SNA" ;
+VAL_ 3221225472 DI_uiSpeedUnits 1 "DI_SPEED_KPH" 0 "DI_SPEED_MPH" ;
+VAL_ 3221225472 DI_vehicleSpeed 4095 "SNA" ;
+VAL_ 3221225472 VCRIGHT_brakeLightStatus 2 "LIGHT_FAULT" 0 "LIGHT_OFF" 1 "LIGHT_ON" 3 "LIGHT_SNA" ;
+VAL_ 3221225472 VCRIGHT_reverseLightStatus 2 "LIGHT_FAULT" 0 "LIGHT_OFF" 1 "LIGHT_ON" 3 "LIGHT_SNA" ;
 VAL_ 12 UI_autopilotTrial 3 "ACTIVE" 0 "NONE" 1 "START" 2 "STOP" ;
 VAL_ 12 UI_cellNetworkTechnology 9 "CELL_NETWORK_CDMA" 2 "CELL_NETWORK_EDGE" 1 "CELL_NETWORK_GPRS" 8 "CELL_NETWORK_GSM" 4 "CELL_NETWORK_HSDPA" 6 "CELL_NETWORK_HSPA" 5 "CELL_NETWORK_HSUPA" 7 "CELL_NETWORK_LTE" 0 "CELL_NETWORK_NONE" 15 "CELL_NETWORK_SNA" 3 "CELL_NETWORK_UMTS" 10 "CELL_NETWORK_WCDMA" ;
 VAL_ 12 UI_cellSignalBars 5 "FIVE" 4 "FOUR" 1 "ONE" 7 "SNA" 3 "THREE" 2 "TWO" 0 "ZERO" ;
@@ -3475,8 +3487,6 @@ VAL_ 562 BMS_fcContactorRequest 1 "SET_REQUEST_CLOSE" 4 "SET_REQUEST_CLOSE_NEGAT
 VAL_ 562 BMS_fcLinkOkToEnergizeRequest 1 "FC_LINK_ENERGY_AC" 2 "FC_LINK_ENERGY_DC" 0 "FC_LINK_ENERGY_NONE" ;
 VAL_ 562 BMS_internalHvilSenseV 65535 "SNA" ;
 VAL_ 562 BMS_packContactorRequest 1 "SET_REQUEST_CLOSE" 4 "SET_REQUEST_CLOSE_NEGATIVE_ONLY" 5 "SET_REQUEST_CLOSE_POSITIVE_ONLY" 2 "SET_REQUEST_OPEN" 3 "SET_REQUEST_OPEN_IMMEDIATELY" 0 "SET_REQUEST_SNA" ;
-VAL_ 609 VCFRONT_batterySMState 0 "INIT" 1 "CHARGE" 2 "DISCHARGE" 3 "STANDBY" 4 "RESISTANCE_ESTIMATION" 5 "OTA_STANDBY" 6 "DISCONNECTED_BATTERY_TEST" 7 "SHORTED_CELL_TEST" 8 "FAULT" 9 "RECOVERY" ;
-VAL_ 609 VCFRONT_voltageProfile 0 "CHARGE" 1 "FLOAT" 2 "REDUCED_FLOAT" 3 "ALWAYS_CLOSED_CONTACTORS" ;
 VAL_ 627 UI_displayBrightnessLevel 255 "SNA" ;
 VAL_ 627 UI_domeLightSwitch 2 "DOME_LIGHT_SWITCH_AUTO" 0 "DOME_LIGHT_SWITCH_OFF" 1 "DOME_LIGHT_SWITCH_ON" ;
 VAL_ 627 UI_driveStateRequest 0 "DRIVE_STATE_REQ_IDLE" 1 "DRIVE_STATE_REQ_START" ;
@@ -3808,10 +3818,8 @@ VAL_ 963 VCRIGHT_frontSeatTrackBack 3 "SWITCH_FAULT" 1 "SWITCH_OFF" 2 "SWITCH_ON
 VAL_ 963 VCRIGHT_frontSeatTrackForward 3 "SWITCH_FAULT" 1 "SWITCH_OFF" 2 "SWITCH_ON" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_rearCenterBuckleSwitch 3 "SWITCH_FAULT" 1 "SWITCH_OFF" 2 "SWITCH_ON" 0 "SWITCH_SNA" ;
 VAL_ 963 VCRIGHT_rearRightBuckleSwitch 3 "SWITCH_FAULT" 1 "SWITCH_OFF" 2 "SWITCH_ON" 0 "SWITCH_SNA" ;
-VAL_ 995 VCRIGHT_brakeLightStatus 2 "LIGHT_FAULT" 0 "LIGHT_OFF" 1 "LIGHT_ON" 3 "LIGHT_SNA" ;
 VAL_ 995 VCRIGHT_interiorTrunkLightStatus 2 "LIGHT_FAULT" 0 "LIGHT_OFF" 1 "LIGHT_ON" 3 "LIGHT_SNA" ;
 VAL_ 995 VCRIGHT_rearFogLightStatus 2 "LIGHT_FAULT" 0 "LIGHT_OFF" 1 "LIGHT_ON" 3 "LIGHT_SNA" ;
-VAL_ 995 VCRIGHT_reverseLightStatus 2 "LIGHT_FAULT" 0 "LIGHT_OFF" 1 "LIGHT_ON" 3 "LIGHT_SNA" ;
 VAL_ 995 VCRIGHT_tailLightStatus 2 "LIGHT_FAULT" 0 "LIGHT_OFF" 1 "LIGHT_ON" 3 "LIGHT_SNA" ;
 VAL_ 995 VCRIGHT_turnSignalStatus 2 "LIGHT_FAULT" 0 "LIGHT_OFF" 1 "LIGHT_ON" 3 "LIGHT_SNA" ;
 VAL_ 1622 DIF_infoIndex 13 "DI_INFO_APP_CRC" 17 "DI_INFO_APP_GITHASH" 15 "DI_INFO_BOOTLOADER_CRC" 18 "DI_INFO_BOOTLOADER_GITHASH" 14 "DI_INFO_BOOTLOADER_SVN" 10 "DI_INFO_BUILD_HWID_COMPONENTID" 0 "DI_INFO_DEPRECATED_0" 1 "DI_INFO_DEPRECATED_1" 2 "DI_INFO_DEPRECATED_2" 3 "DI_INFO_DEPRECATED_3" 4 "DI_INFO_DEPRECATED_4" 5 "DI_INFO_DEPRECATED_5" 6 "DI_INFO_DEPRECATED_6" 7 "DI_INFO_DEPRECATED_7" 8 "DI_INFO_DEPRECATED_8" 9 "DI_INFO_DEPRECATED_9" 255 "DI_INFO_END" 11 "DI_INFO_PCBAID_ASSYID_USAGEID" 16 "DI_INFO_SUBCOMPONENT" 23 "DI_INFO_SUBCOMPONENT2" 31 "DI_INFO_SUBCOMPONENT_GITHASH" 20 "DI_INFO_UDS_PROTOCOL_BOOTCRC" 19 "DI_INFO_VERSION_DEPRECATED" ;
@@ -4071,10 +4079,10 @@ VAL_ 341 ESP_WheelRotationFrL 3 "WR_NOT_DEFINABLE" 2 "WR_STANDSTILL" 1 "WR_BACKW
 VAL_ 341 ESP_wheelSpeedsQF 1 "ALL_WSS_VALID" 0 "ONE_OR_MORE_WSS_INVALID" ;
 VAL_ 341 ESP_vehicleStandstillSts 1 "STANDSTILL" 0 "NOT_STANDSTILL" ;
 VAL_ 341 ESP_vehicleSpeed 1023 "ESP_VEHICLE_SPEED_SNA" ;
-VAL_ 373 WheelSpeedRR175 8191 "SNA" ;
-VAL_ 373 WheelSpeedRL175 8191 "SNA" ;
-VAL_ 373 WheelSpeedFR175 8191 "SNA" ;
-VAL_ 373 WheelSpeedFL175 8191 "SNA" ;
+VAL_ 1980 WheelSpeedRR175 8191 "SNA" ;
+VAL_ 1980 WheelSpeedRL175 8191 "SNA" ;
+VAL_ 1980 WheelSpeedFR175 8191 "SNA" ;
+VAL_ 1980 WheelSpeedFL175 8191 "SNA" ;
 VAL_ 389 ESP_brakeTorqueFrL 4095 "SNA" ;
 VAL_ 389 ESP_brakeTorqueFrR 4095 "SNA" ;
 VAL_ 389 ESP_brakeTorqueReL 4095 "SNA" ;
@@ -4176,6 +4184,8 @@ VAL_ 513 VCFRONT_solenoidEvapState 2 "CLOSED" 3 "FAULTED" 1 "OPENED" 0 "UNDEFINE
 VAL_ 513 VCFRONT_tempRefrigDischarge 2047 "SNA" ;
 VAL_ 513 VCFRONT_tempRefrigLiquid 2047 "SNA" ;
 VAL_ 513 VCFRONT_tempSuperheatActual 1023 "SNA" ;
+VAL_ 609 VCFRONT_batterySMState 0 "INIT" 1 "CHARGE" 2 "DISCHARGE" 3 "STANDBY" 4 "RESISTANCE_ESTIMATION" 5 "OTA_STANDBY" 6 "DISCONNECTED_BATTERY_TEST" 7 "SHORTED_CELL_TEST" 8 "FAULT" 9 "RECOVERY" ;
+VAL_ 609 VCFRONT_voltageProfile 0 "CHARGE" 1 "FLOAT" 2 "REDUCED_FLOAT" 3 "ALWAYS_CLOSED_CONTACTORS" ;
 VAL_ 548 DCDCstate224 6 "Error" 5 "Shutdown" 4 "HVactive" 3 "Precharge" 2 "PrechargeStart" 1 "12vChg" 0 "Idle" ;
 VAL_ 548 DCDCSubState224 0 "PWR_UP_INIT" 1 "STANDBY" 2 "12V_SUPPORT_ACTIVE" 3 "DIS_HVBUS" 4 "PCHG_FAST_DIS_HVBUS" 5 "PCHG_SLOW_DIS_HVBUS" 6 "PCHG_DWELL_CHARGE" 7 "PCHG_DWELL_WAIT" 8 "PCHG_DI_RECOVERY_WAIT" 9 "PCHG_ACTIVE" 10 "PCHG_FLT_FAST_DIS_HVBUS" 11 "SHUTDOWN" 12 "12V_SUPPORT_FAULTED" 13 "DIS_HVBUS_FAULTED" 14 "PCHG_FAULTED" 15 "CLEAR_FAULTS" 16 "FAULTED" 17 "NUM" ;
 VAL_ 551 CMP_state 3 "CMP_STATE_FAULT" 0 "CMP_STATE_NONE" 1 "CMP_STATE_NORMAL" 15 "CMP_STATE_SNA" 5 "CMP_STATE_SOFT_SHUTDOWN" 4 "CMP_STATE_SOFT_START" 2 "CMP_STATE_WAIT" ;
@@ -4195,16 +4205,14 @@ VAL_ 850 BMS_expectedEnergyRemaining 2047 "SNA" ;
 VAL_ 850 BMS_idealEnergyRemaining 2047 "SNA" ;
 VAL_ 850 BMS_nominalEnergyRemaining 2047 "SNA" ;
 VAL_ 850 BMS_nominalFullPackEnergy 2047 "SNA" ;
-VAL_ 914 BMS_moduleType 0 "UNKNOWN" 1 "E3_NCT" 2 "E1_NCT" 3 "E3_CT" 4 "E1_CT" 5 "E1_CP" ;
 VAL_ 914 BMS_packConfigMultiplexer 0 "Mux0" 1 "Mux1" ;
+VAL_ 914 BMS_moduleType 0 "UNKNOWN" 1 "E3_NCT" 2 "E1_NCT" 3 "E3_CT" 4 "E1_CT" 5 "E1_CP" ;
 VAL_ 914 BMS_reservedConfig_0 0 "BMS_CONFIG_0" 1 "BMS_CONFIG_1" 10 "BMS_CONFIG_10" 11 "BMS_CONFIG_11" 12 "BMS_CONFIG_12" 13 "BMS_CONFIG_13" 14 "BMS_CONFIG_14" 15 "BMS_CONFIG_15" 16 "BMS_CONFIG_16" 17 "BMS_CONFIG_17" 18 "BMS_CONFIG_18" 19 "BMS_CONFIG_19" 2 "BMS_CONFIG_2" 20 "BMS_CONFIG_20" 21 "BMS_CONFIG_21" 22 "BMS_CONFIG_22" 23 "BMS_CONFIG_23" 24 "BMS_CONFIG_24" 25 "BMS_CONFIG_25" 26 "BMS_CONFIG_26" 27 "BMS_CONFIG_27" 28 "BMS_CONFIG_28" 29 "BMS_CONFIG_29" 3 "BMS_CONFIG_3" 30 "BMS_CONFIG_30" 31 "BMS_CONFIG_31" 4 "BMS_CONFIG_4" 5 "BMS_CONFIG_5" 6 "BMS_CONFIG_6" 7 "BMS_CONFIG_7" 8 "BMS_CONFIG_8" 9 "BMS_CONFIG_9" ;
 VAL_ 594 BMS_powerLimitsState 1 "POWER_CALCULATED_FOR_DRIVE" 0 "POWER_NOT_CALCULATED_FOR_DRIVE" ;
 VAL_ 658 BattBeginningOfLifeEnergy292 1023 "SNA" ;
 VAL_ 658 BMS_battTempPct 255 "SNA" ;
-VAL_ 599 DI_uiSpeed 511 "DI_UI_SPEED_SNA" ;
-VAL_ 599 DI_uiSpeedHighSpeed 511 "DI_UI_HIGH_SPEED_SNA" ;
-VAL_ 599 DI_uiSpeedUnits 1 "DI_SPEED_KPH" 0 "DI_SPEED_MPH" ;
-VAL_ 599 DI_vehicleSpeed 4095 "SNA" ;
+VAL_ 1963 VCRIGHT_brakeLightStatus 2 "LIGHT_FAULT" 0 "LIGHT_OFF" 1 "LIGHT_ON" 3 "LIGHT_SNA" ;
+VAL_ 1963 DI_uiSpeed 511 "DI_UI_SPEED_SNA" ;
 VAL_ 680 CMPD_state 3 "CMPD_STATE_FAULT" 4 "CMPD_STATE_IDLE" 0 "CMPD_STATE_INIT" 1 "CMPD_STATE_RUNNING" 15 "CMPD_STATE_SNA" 2 "CMPD_STATE_STANDBY" ;
 VAL_ 680 CMPD_wasteHeatState 1 "CMPD_WASTE_HEAT_STATE_ACTIVE" 2 "CMPD_WASTE_HEAT_STATE_NOT_AVAILABLE" 0 "CMPD_WASTE_HEAT_STATE_OFF" 3 "CMPD_WASTE_HEAT_STATE_UNUSED" ;
 VAL_ 886 DIF_inverterTQF 0 "INVERTERT_INIT" 1 "INVERTERT_IRRATIONAL" 2 "INVERTERT_RATIONAL" 3 "INVERTERT_UNKNOWN" ;
@@ -4292,4 +4300,3 @@ VAL_ 2047 GTW_wheelType 4 "GEMINI_19_SQUARE" 5 "GEMINI_19_STAGGERED" 0 "PINWHEEL
 VAL_ 2047 GTW_windshieldType 1 "EASTMAN_ACOUSTIC" 0 "SEKISUI_ACOUSTIC" ;
 VAL_ 2047 GTW_xcpESP 0 "FALSE" 1 "TRUE" ;
 VAL_ 2047 GTW_xcpIbst 0 "FALSE" 1 "TRUE" ;
-
