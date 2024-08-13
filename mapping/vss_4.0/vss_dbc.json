@@ -6035,6 +6035,10 @@
           },
           "EngineSpeed": {
             "datatype": "float",
+            "dbc2vss": {
+              "interval_ms": 100,
+              "signal": "EngineSpeed"
+            },
             "description": "PID 0C - Engine speed measured as rotations per minute",
             "type": "sensor",
             "unit": "rpm"
